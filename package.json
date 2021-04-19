@@ -12,7 +12,11 @@
     "scrypt": "github:barrysteyn/node-scrypt#fb60a8d3c158fe115a624b5ffa7480f3a24b03fb",
     "spin.js": "^4.0.0",
     "truffle": "^5.0.31",
+<<<<<<< HEAD
     "truffle-hdwallet-provider-klaytn": "^1.0.13-a"
+=======
+    "truffle-hdwallet-provider-klaytn": "1.0.13-a"
+>>>>>>> f847537cd7d7e59654ed2615a2de992124915516
   },
   "devDependencies": {
     "copy-webpack-plugin": "^4.6.0",
