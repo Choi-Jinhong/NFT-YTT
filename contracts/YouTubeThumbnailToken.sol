@@ -29,5 +29,7 @@ contract YouTubeThumbnailToken is ERC721Full {
         uint256 tokenId = totalSupply().add(1);
         youtubeThumbnails[tokenId] = YouTubeThumbnail(_author, _dateCreated);
         videoIdsCreated[_videoId] = tokenId;
+
+        _mint(msg.sender, tokenId);
     }
 }
