@@ -5,7 +5,7 @@ const config = {
   rpcURL: 'https://api.baobab.klaytn.net:8651'
 }
 const cav = new Caver(config.rpcURL);
-//const yttContract = new cav.klay.Contract(DEPLOYED_ABI, DEPLOYED_ADDRESS);
+const yttContract = new cav.klay.Contract(DEPLOYED_ABI, DEPLOYED_ADDRESS);
 
 const App = {
   auth: {
@@ -101,7 +101,7 @@ const App = {
     $('#loginModal').modal('hide');
     $("#login").hide();
     $('#logout').show();
-    // ...
+    $('.afterLogin').show();
     $('#address').append('<br>' + '<p>' + '내 계정 주소: ' + walletInstance.address + '</p>');  
     // ...   
     // ...
@@ -121,7 +121,15 @@ const App = {
   //#endregion
 
   checkTokenExists: async function () {   
-   
+    let videoId = $('#video-id').val();
+    let result = await this.isTokenAlreadyCreated(videoId);
+
+    if(result) {
+      $('#t-message').text('이미 토큰화된 썸네일입니다.');
+    } else {
+      $('#t-message').text('토큰화가 가능한 썸네일 입니다.');
+      $('.btn-create').prop('disabled', false);
+    }
   },
 
   createToken: async function () {   
@@ -177,7 +185,7 @@ const App = {
   },     
 
   isTokenAlreadyCreated: async function (videoId) {
-   
+    return await yttContract.isTokenAlreadyCreated(videoId).call();
   },
 
   getERC721MetadataSchema: function (videoId, title, imgUrl) {

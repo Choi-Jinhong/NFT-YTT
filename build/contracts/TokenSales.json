@@ -35,7 +35,7 @@
         "id": 59,
         "nodeType": "ImportDirective",
         "scope": 61,
-        "sourceUnit": 1439,
+        "sourceUnit": 1544,
         "src": "27:69:1",
         "symbolAliases": [],
         "unitAlias": ""
@@ -84,7 +84,7 @@
       },
       {
         "attributes": {
-          "SourceUnit": 1439,
+          "SourceUnit": 1544,
           "absolutePath": "openzeppelin-solidity/contracts/token/ERC721/ERC721Full.sol",
           "file": "openzeppelin-solidity/contracts/token/ERC721/ERC721Full.sol",
           "scope": 61,
@@ -132,7 +132,7 @@
   },
   "networks": {},
   "schemaVersion": "3.3.4",
-  "updatedAt": "2021-04-19T00:50:30.479Z",
+  "updatedAt": "2021-04-19T02:17:26.345Z",
   "devdoc": {
     "methods": {}
   },
